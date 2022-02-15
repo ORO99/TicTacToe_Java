@@ -1,5 +1,9 @@
 package com.example.tictactoe;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
@@ -9,6 +13,7 @@ import java.util.ArrayList;
 public class Player {
     private String userName;
     private String password;
+    private Button invitePlayer;
     private int status;
     private int score;
     private final Database Db=new Database();
@@ -33,6 +38,20 @@ public class Player {
         setScore(playerScore);
         getPlayerData();
     }
+    Player(String n, int st, int sc){
+        this.userName = n;
+        this.status = st;
+        this.score = sc;
+        this.invitePlayer = new Button("Invite");
+        this.invitePlayer.setStyle("-fx-border-color: #000000; -fx-border-width: 2px; fx-text-fill: red; -fx-background-color: #FFFFFF");
+        this.invitePlayer.setId(userName);
+        this.invitePlayer.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println(invitePlayer.getId());
+            }
+        });
+    }
     Player(Player copyPlayer){
         setUserName(copyPlayer.getUserName());
         setPassword(copyPlayer.getPassword());
@@ -55,6 +74,7 @@ public class Player {
                 if(playerData.first()) {
                     setStatus(playerData.getInt(3));
                     setScore(playerData.getInt(4));
+                    setInvitePlayer();
                 }
             } catch (SQLException e) {
                 System.out.println("inside Player.getPlayerData function: " + e);
@@ -168,5 +188,17 @@ public class Player {
         }
         return friends;
     }
-
+    public void setInvitePlayer() {
+        this.invitePlayer = new Button("Invite");
+        this.invitePlayer.setId(userName);
+        this.invitePlayer.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("saba7 el foll");
+            }
+        });
+    }
+    public Button getInvitePlayer() {
+        return invitePlayer;
+    }
 }

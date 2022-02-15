@@ -27,15 +27,22 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="68dca2af-0cda-445b-a000-13e62349a5fe">
-      <console name="tic_tac" type="STANDARD" schema="mysql" session="Main" />
+    <connection id="15317146-5a53-4524-8471-bb1319caf9af">
+      <console name="myDBs" type="STANDARD" schema="tic_tac" session="Main"><![CDATA[use tic_tac;
+ select * from players;
+update players set status=0;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="15317146-5a53-4524-8471-bb1319caf9af" object-ref="consoles/myDBs" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="68dca2af-0cda-445b-a000-13e62349a5fe" />
+    <connection id="15317146-5a53-4524-8471-bb1319caf9af" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="15317146-5a53-4524-8471-bb1319caf9af" dataset="tic_tac.players" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -66,23 +73,23 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="68dca2af-0cda-445b-a000-13e62349a5fe" active="true" signed="false">
+      <connection id="15317146-5a53-4524-8471-bb1319caf9af" active="true" signed="false">
         <database>
-          <name value="tic_tac" />
+          <name value="myDBs" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
           <database-version value="8.0" />
-          <driver-source value="EXTERNAL" />
-          <driver-library value="$PROJECT_DIR$/../Downloads/rars/mysql-connector-java-8.0.27.jar" />
-          <driver value="com.mysql.jdbc.Driver" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
           <database value="mysql" />
           <type value="USER_PASSWORD" />
-          <user value="root" />
-          <deprecated-pwd value="MjU4MzA3YUE=" />
+          <user value="sammy" />
+          <deprecated-pwd value="cGFzc3dvcmQ=" />
         </database>
         <properties>
           <auto-commit value="false" />

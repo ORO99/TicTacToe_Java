@@ -5,14 +5,14 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Clint {
+public class Client {
     Socket mySocket;
     Player clintData;
-    Clint ahmed;//null
+    Client ahmed;//null
     DataInputStream dataInputStream;
     PrintStream printStream;
 
-    Clint(Player playerData){
+    Client(Player playerData){
         try{
             mySocket = new Socket("127.0.0.1", 5005);
             dataInputStream = new DataInputStream(mySocket.getInputStream());
@@ -21,12 +21,12 @@ public class Clint {
             Scanner myObj = new Scanner(System.in);
             sendMove(myObj.nextLine());
         } catch (Exception ex) {
-            System.out.println("inside Clint constructor: " + ex);
+            System.out.println("inside Client constructor: " + ex);
         }
 //        dis = new DataInputStream(mySocket.getInputStream());
 //        ps = new PrintStream(mySocket.getOutputStream());
     }
-    Clint(Socket clintSocket,Player playerData) {
+    Client(Socket clintSocket, Player playerData) {
         try {
             mySocket = clintSocket;
             dataInputStream = new DataInputStream(clintSocket.getInputStream());
@@ -35,7 +35,7 @@ public class Clint {
 //            Scanner myObj = new Scanner(System.in);
 //            sendMove(myObj.nextLine());
         } catch (Exception ex) {
-            System.out.println("inside Clint constructor: " + ex);
+            System.out.println("inside Client constructor: " + ex);
         }
     }
     public void printClint(){

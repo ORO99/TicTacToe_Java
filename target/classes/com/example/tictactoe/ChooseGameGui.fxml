@@ -6,15 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.tictactoe.ChooseGameController" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.tictactoe.ChooseGameController" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Button fx:id="b1" layoutX="104.0" layoutY="80.0" mnemonicParsing="false" text="Online" />
-        <Button fx:id="b2" layoutX="104.0" layoutY="278.0" mnemonicParsing="false" text="Offline" />
-        <TableView fx:id="myTable" layoutX="277.0" prefHeight="400.0" prefWidth="323.0">
+        <Button fx:id="b1" onAction="#playOffline" layoutX="104.0" layoutY="80.0" mnemonicParsing="false" text="Online" />
+        <Button fx:id="b2" onAction="#playOnline" layoutX="104.0" layoutY="278.0" mnemonicParsing="false" text="Offline" />
+        <TableView fx:id="myTable" layoutX="277.0" prefHeight="400.0" prefWidth="400.0">
             <columns>
                 <TableColumn fx:id="name" prefWidth="170.0" text="User Name" />
                 <TableColumn fx:id="status" prefWidth="75.0" text="Status" />
                 <TableColumn fx:id="score" prefWidth="75.0" text="Score" />
+                <TableColumn fx:id="invite" prefWidth="75.0" text="Invite" />
             </columns>
         </TableView>
     </children>

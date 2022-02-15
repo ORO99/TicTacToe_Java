@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Player x;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -16,6 +18,10 @@ public class Main extends Application {
         primaryStage.setTitle("Login Window");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+    @Override
+    public void stop(){
+        System.out.println(x.logout());
     }
 
 

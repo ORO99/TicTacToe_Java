@@ -15,9 +15,9 @@ public class LoginController {
 
     public void login() throws IOException {
 //        Server s =new Server();
-        Player x=new Player(user_name.getText(),user_pass.getText());
-        if(x.login()) {
-//            Clint y = new Clint(x);
+        Main.x = new Player(user_name.getText(),user_pass.getText());
+        if(Main.x.login()) {
+//            Client y = new Client(x);
 //            y.printClint();
             AnchorPane pane = FXMLLoader.load(getClass().getResource("ChooseGameGui.fxml"));
 //            AnchorPane pane = FXMLLoader.load(getClass().getResource("GameGui.fxml"));
